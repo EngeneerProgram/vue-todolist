@@ -31,6 +31,7 @@ const app = new Vue(
         methods:{
             delete_todo(i){
                 console.log("ok funge")
+                this.tasks.splice(this.tasks,1)
             },
             new_task(){
                 console.log("nuova task")
