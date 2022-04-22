@@ -5,12 +5,36 @@ const app = new Vue(
             tasks:[
                 {
                     text: "Fare la spesa",
-                    done: ""
+                    done: true
                 },
+
+                {
+                    text: "Visita medica",
+                    done: false
+                },
+
+                {
+                    text: "Pulire casa",
+                    done: false
+                },
+
+                {
+                    text: "Cucinare",
+                    done: true
+                },
+
+
+
+
             ]
         },
         methods:{
-
+            delete_todo(i){
+                console.log("ok funge")
+            },
+            new_task(){
+                console.log("nuova task")
+            }
         }
     }
 )

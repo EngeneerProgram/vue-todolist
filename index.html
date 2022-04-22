@@ -14,36 +14,19 @@
         <img src="./assets/img/logo.png" width="400px" alt="">
         <div class="insert_task">
             <input type="text" class="add_task" required placeholder="Add a new task">
-            <button class="btn">Add Task</button>
+            <button  @click="new_task" class="btn">Add Task</button>
         </div>
 
         <div class="list_to_do">
             <ul>
-                <li>
+                <li v-if="task.done == true" class="done_todo" v-for="(task, index) in tasks "> 
                    <div class="task">
-                       sgrgh  <i class="fa-solid delete fa-trash-can"></i>
+                        {{task.text}}<i  @click="delete_todo(index)" class="fa-solid delete fa-trash-can"></i>
+                      
                    </div>
+                   
                 </li>
-                <li>
-                    <div class="task">
-                        sgrgh  <i class="fa-solid delete fa-trash-can"></i>
-                    </div>
-                 </li>
-                 <li>
-                    <div class="task">
-                        sgrgh  <i class="fa-solid delete fa-trash-can"></i>
-                    </div>
-                 </li>
-                 <li>
-                    <div class="task">
-                        sgrgh  <i class="fa-solid delete fa-trash-can"></i>
-                    </div>
-                 </li>
-                 <li>
-                    <div class="task">
-                        sgrgh  <i class="fa-solid delete fa-trash-can"></i>
-                    </div>
-                 </li>
+                
                 
             </ul>
         </div>

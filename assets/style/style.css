@@ -37,6 +37,9 @@ body{
 .list_to_do{
     display:Flex;
     flex-direction: column;
+    box-shadow: 0 0 10px rgb(75, 72, 72);
+    border-radius: 10px;
+    background-color: rgb(22, 175, 196);
 }
 
 ul{
@@ -46,10 +49,11 @@ ul{
 li{
     width: 450px;
     background-color: rgb(201, 193, 193);
-    margin:5px;
+    margin:10px;
     display:Flex;
-    justify-content: center;
-    align-items: center;
+   justify-content: center;
+   align-items: center;
+    
     border-radius: 10px;
     
 }
@@ -60,6 +64,7 @@ li{
     display:flex;
     justify-content: space-between;
     border-radius: 10px;
+    align-items: center;
 }
 
 .fa-trash-can:before{
@@ -69,4 +74,12 @@ li{
 
 .delete:hover{
     color:red;
+}
+
+.check{
+    color:red
+}
+
+.done_todo{
+    text-decoration: line-through;
 }
