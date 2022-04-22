@@ -13,8 +13,8 @@
     <div class="container">
         <img src="./assets/img/logo.png" width="400px" alt="">
         <div class="insert_task">
-            <input type="text" class="add_task" v-model="new_task" required placeholder="Add a new task">
-            <button  v-on:click="new_task"  class="btn">Add Task</button>
+            <input type="text" class="add_task" v-model="new_todo" required placeholder="Add a new task">
+            <button  v-on:click="new_task()"  class="btn">Add Task</button>
         </div>
 
         <div class="list_to_do">
