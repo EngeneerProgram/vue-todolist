@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css' integrity='sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==' crossorigin='anonymous' referrerpolicy='no-referrer' /> 
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css' integrity='sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==' crossorigin='anonymous' referrerpolicy='no-referrer' />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/style/style.css">
-    <title>To Do App</title>
+    <title>TodoList</title>
 </head>
 <body>
-<div id="app">
-    <div class="container">
-        <img src="./assets/img/logo.png" width="400px" alt="">
-        <div class="insert_task">
-            <input type="text" class="add_task" v-model="new_todo" required placeholder="Add a new task">
-            <button  v-on:click="new_task()"  class="btn">Add Task</button>
-        </div>
+    <div id="app">
+        <div class="container">
+            <div class="date">
+                <div id="day"></div>
+                <div id="full_data"></div>
+            </div>
+            <hr>
+            <div class="input_user">
+                <input type="text" placeholder="Add Task" v-model="new_todo">
+                <button  @click="new_task" class="btn"><i  class="fa-solid fa-plus"></i></button>
+            </div>
 
-        <div class="list_to_do">
-            <ul>
-                <li  :class="task.done ? 'done_todo' : ''"  v-for="(task, index) in tasks "> 
-                   <div @click="task_done(index)" class="task">
-                        {{task.text}}<i  @click="delete_todo(index)" class="fa-solid delete fa-trash-can"></i>
-                      
-                   </div>
-                   
-                </li>
+            <div  class="list_todo">
+                <ul>
+                    <li   v-for="(task, index) in tasks">
+                        <div  :class="task.done ? 'done_todo' : ''" class="todo">{{task.text}}</div>
+                        <div class="ico">
+                            <i @click="task_done(index)" class="fa-solid fa-circle-check"></i>
+                            <i @click="delete_todo(index)" class="fa-solid fa-trash"></i>
+                        </div>
+                    </li>
+                </ul>
                 
-                
-            </ul>
+            </div>
+            
         </div>
+       
     </div>
-</div>
+     
 
-    
     <script src='https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js'></script>"
     <script src="./assets/javascript/app.js"></script>
+    
 </body>
 </html>
